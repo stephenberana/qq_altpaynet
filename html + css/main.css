@@ -5,7 +5,7 @@
 }
 
 .menu {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
 }
 
@@ -15,11 +15,41 @@
     border-bottom: 2px solid #ccc;
 }
 
+.menu-item {
+    display: flex;
+}
+
+.menu-item-image {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    object-fit: cover;
+    margin-right: 1.5em;
+}
+
+.menu-item-text {
+    flex-grow: 1;
+}
+
+.menu-item-heading {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.menu-item-name {
+    margin-right: 1.5em;
+}
+
+.menu-item-description {
+    line-height: 1.6;
+}
+
 .menu-group {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5em;
-    padding: 1.5em;
+    padding: 1.5em 0;
 }
 
 @media screen and (min-width: 992px) {
@@ -31,6 +61,10 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .menu-item-image {
+        width: 125px;
+        height: 125px;
+    }
 }
 
 /* Alt Media Query w/Sidebar */
