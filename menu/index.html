@@ -14,23 +14,25 @@
 
 <body>
     <script src="https://kit.fontawesome.com/7368c40b21.js" crossorigin="anonymous">
-        const images = document.querySelectorAll("img.menu-item-image");
+        const images = document.querySelectorAll(".menu-item-image");
         const modal = document.querySelector(".modal");
         const modalImg = document.querySelector(".modalImg");
         const modalTxt = document.querySelector(".modalTxt");
         const close = document.querySelector(".close");
 
-        images.forEach((image) => {
-            image.addEventListener("click", () => {
-                modalImg.src = image.src;
-                modalTxt.innerHTML = image.alt;
-                modal.classList.add("appear");
-                console.log("Image clicked!")
-                close.addEventListener("click", () => {
-                    modal.classList.remove("appear");
-                })
+        window.onload = function () {
+            images.forEach((image) => {
+                image.addEventListener("click", () => {
+                    modalImg.src = image.src;
+                    modalTxt.innerHTML = image.alt;
+                    modal.classList.add("appear");
+                    console.log("Image clicked!")
+                    close.addEventListener("click", () => {
+                        modal.classList.remove("appear");
+                    })
+                });
             });
-        });
+        };    
     </script>
 
     <div class="container">
