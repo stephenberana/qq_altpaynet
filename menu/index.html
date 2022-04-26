@@ -10,33 +10,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7368c40b21.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
-    <script src="https://kit.fontawesome.com/7368c40b21.js" crossorigin="anonymous">
-        const images = document.querySelectorAll(".menu-item-image");
-        const modal = document.querySelector(".modal");
-        const modalImg = document.querySelector(".modalImg");
-        const modalTxt = document.querySelector(".modalTxt");
-        const close = document.querySelector(".close");
-
-        window.onload = function () {
-            images.forEach((image) => {
-                image.addEventListener("click", () => {
-                    modalImg.src = image.src;
-                    modalTxt.innerHTML = image.alt;
-                    modal.classList.add("appear");
-                    console.log("Image clicked!")
-                    close.addEventListener("click", () => {
-                        modal.classList.remove("appear");
-                    })
-                });
-            });
-        };    
-    </script>
-
     <div class="container">
         <div class="menu">
+
             <h2 class="menu-group-heading">
                 Appetizers
             </h2>
@@ -45,6 +26,15 @@
                     <div class="images">
                         <img src="./img/Baked Fil Empanadas.webp" alt="Baked Fil Empanadas" class="menu-item-image">
                     </div>
+                    <!-- <div class="modal" id="myModal">
+                        <span class="close" id="modalClose">
+                            <i class="fas fa-times"></i>
+                        </span>
+                        <div class="modalContent">
+                            <img src="" class="modalImg" id="modalImage" />
+                            <span class="modalTxt" id="modalText"></span>
+                        </div>
+                    </div> -->
                     <div class="menu-item-text">
                         <h3 class="menu-item-heading">
                             <span class="menu-item-name">Baked Filipino Beef Empanadas</span>
@@ -56,7 +46,9 @@
                     </div>
                 </div>
                 <div class="menu-item">
-                    <img src="./img/Sisig.jpg" alt="Sisig" class="menu-item-image">
+                    <div class="images">
+                        <img src="./img/Sisig.jpg" alt="Sisig" class="menu-item-image">
+                    </div>
                     <div class="menu-item-text">
                         <h3 class="menu-item-heading">
                             <span class="menu-item-name">Sisig</span>
@@ -70,7 +62,9 @@
                     </div>
                 </div>
                 <div class="menu-item">
-                    <img src="./img/Chicharong Bulaklak.jpg" alt="Chicharong Bulaklak" class="menu-item-image">
+                    <div class="images">
+                        <img src="./img/Chicharong Bulaklak.jpg" alt="Chicharong Bulaklak" class="menu-item-image">
+                    </div>
                     <div class="menu-item-text">
                         <h3 class="menu-item-heading">
                             <span class="menu-item-name">Chicharong Bulaklak</span>
@@ -83,7 +77,9 @@
                     </div>
                 </div>
                 <div class="menu-item">
-                    <img src="./img/Lumpiang Togue.jpg" alt="Lumpiang Togue" class="menu-item-image">
+                    <div class="images">
+                        <img src="./img/Lumpiang Togue.jpg" alt="Lumpiang Togue" class="menu-item-image">
+                    </div>
                     <div class="menu-item-text">
                         <h3 class="menu-item-heading">
                             <span class="menu-item-name">Lumpiang Togue</span>
@@ -101,7 +97,9 @@
             </h2>
             <div class="menu-group">
                 <div class="menu-item">
-                    <img src="./img/Adobo.webp" alt="Adobo" class="menu-item-image">
+                    <div class="images">
+                        <img src="./img/Adobo.webp" alt="Adobo" class="menu-item-image">
+                    </div>
                     <div class="menu-item-text">
                         <h3 class="menu-item-heading">
                             <span class="menu-item-name">Adobo</span>
@@ -114,7 +112,9 @@
                     </div>
                 </div>
                 <div class="menu-item">
-                    <img src="./img/Sinigang.webp" alt="Sinigang" class="menu-item-image">
+                    <div class="images">
+                        <img src="./img/Sinigang.webp" alt="Sinigang" class="menu-item-image">
+                    </div>
                     <div class="menu-item-text">
                         <h3 class="menu-item-heading">
                             <span class="menu-item-name">Sinigang</span>
@@ -128,7 +128,9 @@
                     </div>
                 </div>
                 <div class="menu-item">
-                    <img src="./img/Bulalo.webp" alt="Bulalo" class="menu-item-image">
+                    <div class="images">
+                        <img src="./img/Bulalo.webp" alt="Bulalo" class="menu-item-image">
+                    </div>
                     <div class="menu-item-text">
                         <h3 class="menu-item-heading">
                             <span class="menu-item-name">Bulalo</span>
@@ -141,7 +143,9 @@
                     </div>
                 </div>
                 <div class="menu-item">
-                    <img src="./img/Bistek Tagalog.webp" alt="Bistek Tagalog" class="menu-item-image">
+                    <div class="images">
+                        <img src="./img/Bistek Tagalog.webp" alt="Bistek Tagalog" class="menu-item-image">
+                    </div>
                     <div class="menu-item-text">
                         <h3 class="menu-item-heading">
                             <span class="menu-item-name">Bistek Tagalog</span>
@@ -160,7 +164,9 @@
             </h2>
             <div class="menu-group">
                 <div class="menu-item">
-                    <img src="./img/Halo-halo.webp" alt="Halo-halo" class="menu-item-image">
+                    <div class="images">
+                        <img src="./img/Halo-halo.webp" alt="Halo-halo" class="menu-item-image">
+                    </div>
                     <div class="menu-item-text">
                         <h3 class="menu-item-heading">
                             <span class="menu-item-name">Halo-halo</span>
@@ -173,7 +179,9 @@
                     </div>
                 </div>
                 <div class="menu-item">
-                    <img src="./img/Buko Pandan.webp" alt="Buko Pandan" class="menu-item-image">
+                    <div class="images">
+                        <img src="./img/Buko Pandan.webp" alt="Buko Pandan" class="menu-item-image">
+                    </div>
                     <div class="menu-item-text">
                         <h3 class="menu-item-heading">
                             <span class="menu-item-name">Buko Pandan</span>
@@ -185,7 +193,9 @@
                     </div>
                 </div>
                 <div class="menu-item">
-                    <img src="./img/Turon.webp" alt="Turon" class="menu-item-image">
+                    <div class="images">
+                        <img src="./img/Turon.webp" alt="Turon" class="menu-item-image">
+                    </div>
                     <div class="menu-item-text">
                         <h3 class="menu-item-heading">
                             <span class="menu-item-name">Turon</span>
@@ -197,7 +207,9 @@
                     </div>
                 </div>
                 <div class="menu-item">
-                    <img src="./img/Ensaymada.webp" alt="Ensaymada" class="menu-item-image">
+                    <div class="images">
+                        <img src="./img/Ensaymada.webp" alt="Ensaymada" class="menu-item-image">
+                    </div>
                     <div class="menu-item-text">
                         <h3 class="menu-item-heading">
                             <span class="menu-item-name">Ensaymada</span>
@@ -209,34 +221,16 @@
                 </div>
             </div>
         </div>
-
-        <div class="modal">
-            <span class="close">
+        <div class="modal" id="myModal">
+            <span class="close" id="modalClose">
                 <i class="fas fa-times"></i>
             </span>
             <div class="modalContent">
-                <img src="" class="modalImg" />
-                <span class="modalTxt"></span>
+                <img src="" class="modalImg" id="modalImage" />
+                <span class="modalTxt" id="modalText"></span>
             </div>
         </div>
     </div>
-
-    <!-- <script>
-        const images = document.querySelectorAll(".menu-item-image");
-        const modal = document.querySelector(".modal");
-        const modalImg = document.querySelector(".modalImg");
-        const modalTxt = document.querySelector(".modalTxt");
-        const close = document.querySelector(".close");
-
-        images.forEach(image => {
-            image.addEventListener("click", () => {
-                modal.classList.add("appear");
-                close.addEventListener("click", () => {
-                    modal.classList.remove("appear");
-                })
-            });
-        });
-    </script> -->
 </body>
 
 </html>
