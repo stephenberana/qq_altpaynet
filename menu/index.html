@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
-    <link rel="stylesheet" href="/qq_altpaynet/html + css/main.css">
+    <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -14,6 +14,23 @@
 
 <body>
     <script src="https://kit.fontawesome.com/7368c40b21.js" crossorigin="anonymous">
+        const images = document.querySelectorAll("img.menu-item-image");
+        const modal = document.querySelector(".modal");
+        const modalImg = document.querySelector(".modalImg");
+        const modalTxt = document.querySelector(".modalTxt");
+        const close = document.querySelector(".close");
+
+        images.forEach((image) => {
+            image.addEventListener("click", () => {
+                modalImg.src = image.src;
+                modalTxt.innerHTML = image.alt;
+                modal.classList.add("appear");
+                console.log("Image clicked!")
+                close.addEventListener("click", () => {
+                    modal.classList.remove("appear");
+                })
+            });
+        });
     </script>
 
     <div class="container">
@@ -23,7 +40,9 @@
             </h2>
             <div class="menu-group">
                 <div class="menu-item">
-                    <img src="./img/Baked Fil Empanadas.webp" alt="Baked Fil Empanadas" class="menu-item-image">
+                    <div class="images">
+                        <img src="./img/Baked Fil Empanadas.webp" alt="Baked Fil Empanadas" class="menu-item-image">
+                    </div>
                     <div class="menu-item-text">
                         <h3 class="menu-item-heading">
                             <span class="menu-item-name">Baked Filipino Beef Empanadas</span>
@@ -199,6 +218,23 @@
             </div>
         </div>
     </div>
+
+    <!-- <script>
+        const images = document.querySelectorAll(".menu-item-image");
+        const modal = document.querySelector(".modal");
+        const modalImg = document.querySelector(".modalImg");
+        const modalTxt = document.querySelector(".modalTxt");
+        const close = document.querySelector(".close");
+
+        images.forEach(image => {
+            image.addEventListener("click", () => {
+                modal.classList.add("appear");
+                close.addEventListener("click", () => {
+                    modal.classList.remove("appear");
+                })
+            });
+        });
+    </script> -->
 </body>
 
 </html>
