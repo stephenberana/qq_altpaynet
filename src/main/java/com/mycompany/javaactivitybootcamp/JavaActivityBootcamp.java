@@ -27,15 +27,18 @@ public class JavaActivityBootcamp {
             int input = scanner.nextInt();
             switch (input) {
              case 1: 
+                User user = new User();
                 System.out.println("LOGIN \n"
                         + "Enter your username and password to continue. \n");
                 System.out.print("Username: ");
-                String username = scanner.next(); 
+                String username = scanner.next();
+                user.setUsername(username);
                 System.out.print("Password: ");
                 String password = scanner.next();
+                user.setPassword(password);
 //                TextField password = new TextField(8);
 //                password.setEchoChar('*');
-//                User login = new User(setUsername, setPassword);
+                System.out.println(username);
                 break;
              case 0: 
                  System.out.println("Logging out.");
