@@ -5,8 +5,12 @@
 
 package com.mycompany.javaactivitybootcamp;
 
+import com.mycompany.javaactivitybootcamp.model.Product;
 import com.mycompany.javaactivitybootcamp.model.User;
+import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 //import java.awt.TextField;
 import java.util.Scanner;
@@ -21,7 +25,8 @@ public class JavaActivityBootcamp {
     private static Scanner scanner = new Scanner(System.in);
     
     public static void main(String[] args) {
-        List<User> users = new ArrayList<>();
+                        Collection<User> users = new ArrayList<User>();
+                        Collection<Product> products = new ArrayList<Product>();
                         System.out.println("***********************");
                         System.out.println("* Welcome to my shop! *");
                         System.out.println("***********************");
@@ -59,6 +64,7 @@ public class JavaActivityBootcamp {
                     System.out.println("2 - Manage orders");
                     System.out.println("***********************");
                     System.out.println("0 - Logout");
+                    System.out.print("What do you want to  do? : ");
                     Scanner admin1 = new Scanner(System.in);
                         if (admin1.hasNextInt()) {
                             int adminlog1 = admin1.nextInt();
@@ -67,11 +73,34 @@ public class JavaActivityBootcamp {
                                 System.out.println("***********************");
                                 System.out.println("*       PRODUCTS      *");
                                 System.out.println("***********************");
-                                System.out.println("<Product list here>");
+                                Iterator<Product> productIndex = products.iterator();
+                                while (productIndex.hasNext()) {
+                                    Product p = productIndex.next();
+                                    System.out.println(p);
+                                }
                                 System.out.println("***********************");
                                 System.out.println("0 - Back");
                                 System.out.println("1 - Add new product");
                                 System.out.println("2 - Remove product");
+                                System.out.print("What do you want to  do? : ");
+                                Scanner adminprod = new Scanner(System.in);
+                                    if (adminprod.hasNextInt()) {
+                                        int prodnum = adminprod.nextInt();
+                                        switch (prodnum) {
+                                            case 1:
+                                                System.out.println("Enter product: ");
+                                                String prodName = adminprod.next();
+                                                if (prodName == null || prodName.length() == 0) {
+                                                    System.out.println("Please enter a valid string.");
+                                                } else
+                                                System.out.println("Enter price: ");
+                                                BigInteger prodPrice = adminprod.nextBigInteger();
+                                                if (prodPrice != prodPrice) {
+                                                  System.out.println("Please enter a valid number.");
+                                                } else
+                                                products.add(new Product(prodName, prodPrice));
+                                        }
+                                    }
                                 break;
                                 case 2:
                                 System.out.println("***********************");
